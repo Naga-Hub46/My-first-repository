@@ -1,0 +1,25 @@
+#!/bin/bash
+#####################################
+#Name: Naga
+#Date:
+# Version 1
+#######################################
+
+#list of s3 buckets
+echo "print list of S3 buckets"
+aws S3 ls
+
+#list ec2 Instance
+echo "print list of ec2 instances"
+aws ec2 describe-instances| jq 'Reservations[].Instances[].InstanceId'
+
+#list Lambda
+echo"print list of lambda functions"
+aws lambda list functions
+
+#list IAM users
+echo "print list of IAM Users"
+aws iam list-users
+echo "end of the Script"
+
+#################################################################
